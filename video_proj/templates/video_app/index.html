@@ -1,0 +1,20 @@
+{% extends "video_app/base.html" %}
+{% block body_block %}
+<script type="text/javascript">
+  document.getElementById("register").style.display = "none";
+</script>
+<div class="container">
+  <div class="jumbotron">
+    {% if user.is_authenticated %}
+        <h2>Welcome {{ user.username }}!</h2>
+         <h1><a class="nav-link" id ="home" href="{% url 'video_app:videolist' %}">Go to videos</a></h1>
+    {% else %}
+        <h2>Welcome to the site!</h2>
+    {% endif %}
+
+  </div>
+</div>
+
+
+
+{% endblock %}

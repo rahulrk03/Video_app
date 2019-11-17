@@ -1,0 +1,21 @@
+{% extends "video_app/base.html" %}
+{% block body_block %}
+<script type="text/javascript">
+  $("#signup").hide()
+</script>
+<div class="conatiner">
+  <div class="jumbotron">
+
+
+  <p>Video name is :{{video_details.name}}</p>
+  <p>Id is :{{video_details.id}}</p>
+<p>Tags: {{video_details.tags}}</p>
+<p>Category:{{video_details.categories}}</p>
+  </div>
+</div>
+<div class="container">
+    <p><a class='btn btn-warning' href="{% url 'video_app:update' pk=video_details.pk %}">Update</a></p>
+
+  </div>
+
+{% endblock %}
